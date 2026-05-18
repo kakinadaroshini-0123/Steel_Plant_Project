@@ -1,138 +1,162 @@
 const express = require("express");
+
 const mysql = require("mysql2");
+
 const cors = require("cors");
-const bodyParser = require("body-parser");
+
+const path = require("path");
 
 const app = express();
 
+/* ================= MIDDLEWARE ================= */
+
 app.use(cors());
-app.use(bodyParser.json());
+
+app.use(express.json());
+
+/* ================= HOME PAGE ================= */
+
+app.get("/", (req, res) => {
+
+    res.sendFile(
+        path.join(__dirname, "role.html")
+    );
+
+});
+
+/* ================= STATIC FILES ================= */
+
 app.use(express.static(__dirname));
 
-// ================= MYSQL CONNECTION =================
+/* ================= MYSQL CONNECTION ================= */
 
 const db = mysql.createConnection({
 
     host: "localhost",
+
     user: "root",
+
     password: "system",
+
     database: "haasini"
 
 });
+
+/* ================= CONNECT DATABASE ================= */
 
 db.connect((err) => {
 
     if (err) {
 
-        console.log("Database Connection Failed");
-        console.log(err.message);
-        return;
+        console.log("Database Error");
+
+        console.log(err);
 
     }
 
-    console.log("MySQL Connected Successfully");
+    else {
+
+        console.log(
+            "MySQL Connected Successfully"
+        );
+
+    }
 
 });
 
-
-// ================= LOGIN API =================
+/* ================= LOGIN API ================= */
 
 app.post("/login", (req, res) => {
 
-    const { username, password } = req.body;
+    const {
 
-    // ================= USERNAME VALIDATION =================
+        userid,
 
-    // Must contain exactly 6 digits only
+        password,
 
-    const usernamePattern = /^[0-9]{6}$/;
+        role
 
-    if (!usernamePattern.test(username)) {
+    } = req.body;
 
-        return res.send({
+    console.log("User ID:", userid);
 
-            success: false,
+    console.log("Password:", password);
 
-            message:
-                "User ID must contain exactly 6 digits only"
+    console.log("Role:", role);
 
-        });
-
-    }
-
-    // ================= PASSWORD VALIDATION =================
-
-    if (!password || password.length < 4) {
-
-        return res.send({
-
-            success: false,
-
-            message:
-                "Password must contain at least 4 characters"
-
-        });
-
-    }
-
-    // ================= MYSQL QUERY =================
+    /* ================= SQL QUERY ================= */
 
     const sql =
-        "SELECT * FROM users WHERE username=? AND password=?";
 
-    db.query(sql, [username, password], (err, result) => {
+    `SELECT * FROM users
+     WHERE userid = ?
+     AND password = ?
+     AND role = ?`;
 
-        if (err) {
+    db.query(
 
-            console.log(err);
+        sql,
 
-            return res.send({
+        [userid, password, role],
 
-                success: false,
+        (err, result) => {
 
-                message: "Database Error"
+            if (err) {
 
-            });
+                console.log(err);
+
+                res.send({
+
+                    success: false,
+
+                    message: "Database Error"
+
+                });
+
+            }
+
+            else {
+
+                if (result.length > 0) {
+
+                    res.send({
+
+                        success: true,
+
+                        message:
+                        "Login Successful"
+
+                    });
+
+                }
+
+                else {
+
+                    res.send({
+
+                        success: false,
+
+                        message:
+                        "Invalid User ID or Password"
+
+                    });
+
+                }
+
+            }
 
         }
 
-        // ================= LOGIN SUCCESS =================
-
-        if (result.length > 0) {
-
-            res.send({
-
-                success: true,
-
-                message: "Login Successful"
-
-            });
-
-        }
-
-        // ================= LOGIN FAILED =================
-
-        else {
-
-            res.send({
-
-                success: false,
-
-                message: "Invalid User ID or Password "
-
-            });
-
-        }
-
-    });
+    );
 
 });
 
-
-// ================= SERVER =================
+/* ================= START SERVER ================= */
 
 app.listen(3000, () => {
 
-    console.log("Server Running On Port 3000");
+    console.log(
+        "Server Running On Port 3000"
+    );
 
 });
