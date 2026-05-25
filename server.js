@@ -26,7 +26,7 @@ const db = mysql.createConnection({
 
     user: "root",
 
-    password: "system",
+    password: "SQL123",
 
     database: "steelplant"
 });
@@ -111,6 +111,53 @@ app.post("/login", (req, res) => {
         }
     );
 });
+
+/* ATTENDANCE API */
+
+app.get(
+
+    "/attendance/:id",
+
+    (req,res)=>{
+
+        const employeeId =
+        req.params.id;
+
+        const query = `
+
+        SELECT *
+
+        FROM employee_attendance
+
+        WHERE employee_id = ?
+
+        ORDER BY attendance_date
+
+        `;
+
+        db.query(
+
+            query,
+
+            [employeeId],
+
+            (err,result)=>{
+
+                if(err){
+
+                    console.log(err);
+
+                    return res.status(500).json({
+
+                        success:false
+                    });
+                }
+
+                res.json(result);
+            }
+        );
+    }
+);
 
 /* SERVER */
 

@@ -76,7 +76,6 @@ togglePassword.addEventListener("click",()=>{
 
         togglePassword.innerHTML =
         '<i class="fa-solid fa-eye-slash"></i>';
-
     }
 
     else{
@@ -130,6 +129,15 @@ loginForm.addEventListener("submit",async(e)=>{
 
         if(data.success){
 
+            /* SAVE EMPLOYEE ID */
+
+            localStorage.setItem(
+
+                "employeeId",
+
+                userid
+            );
+
             showPopup(
 
                 "success",
@@ -144,13 +152,13 @@ loginForm.addEventListener("submit",async(e)=>{
                 if(role === "hr"){
 
                     window.location.href =
-                    "hrprofile.html";
+                    "hrhome.html";
                 }
 
                 else{
 
                     window.location.href =
-                    "employeeprofile.html";
+                    "employeehome.html";
                 }
 
             },1500);
@@ -184,5 +192,4 @@ loginForm.addEventListener("submit",async(e)=>{
             "Backend Connection Failed"
         );
     }
-
 });
