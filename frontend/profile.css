@@ -56,14 +56,14 @@ body {
   color: rgba(255, 255, 255, 0.92);
 }
 
-.left-side button {
-  border: none;
-  padding: 14px 30px;
-  border-radius: 18px;
-  background: white;
-  color: #ff5e00;
-  font-weight: 700;
-  cursor: pointer;
+.left-side p{
+
+color:rgba(255,255,255,0.95);
+
+font-size:18px;
+
+font-weight:500;
+
 }
 
 .right-side {
@@ -107,17 +107,6 @@ textarea {
   grid-column: span 2;
 }
 
-.save-btn {
-  margin-top: 26px;
-  width: 100%;
-  padding: 18px 0;
-  border: none;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #ffb800, #ff5e00);
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
 
 @media (max-width: 940px) {
   .profile-card {
