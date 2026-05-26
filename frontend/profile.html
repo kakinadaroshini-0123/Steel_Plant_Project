@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
@@ -24,111 +25,103 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <div class="profile-card">
 
-<div class="left-side">
-
-<div class="profile-image">
-
-<i class="fa-solid fa-user"></i>
-
-</div>
-
-<h2 id="name">
-Loading...
-</h2>
-
-<p id="department">
-Department
-</p>
-
-
-</div>
-
 <div class="right-side">
 
 <div class="top-text">
 
-<h1>Employee Profile</h1>
-
-<p>Steel Plant Employee Details</p>
 
 </div>
+
+<!-- TOP PROFILE CARD -->
+
 <div class="profile-top-card">
 
-    <div class="profile-top-left">
+<div class="profile-top-left">
 
-        <div class="top-icon">
-            <i class="fa-solid fa-user"></i>
-        </div>
+<div class="top-icon">
+<i class="fa-solid fa-user"></i>
+</div>
 
-        <div class="top-user-details">
-            <h2 id="top_name">Priya Sharma</h2>
-            <p>Full Name</p>
-        </div>
+<div class="top-user-details">
 
-    </div>
+<h2 id="top_name">Priya Sharma</h2>
 
-    <div class="top-divider"></div>
-
-    <div class="profile-top-right">
-        <h2 id="top_id">100102</h2>
-        <p>Employee ID</p>
-    </div>
+<p>Full Name</p>
 
 </div>
+
+</div>
+
+<div class="top-divider"></div>
+
+<div class="profile-top-right">
+
+<h2 id="top_id">100102</h2>
+
+<p>Employee ID</p>
+
+</div>
+
+</div>
+
+<!-- FORM -->
 
 <div class="form-grid">
 
 <div>
 <label>Employee ID</label>
-<input type="text" id="employee_id" disabled>
+<input type="text" id="employee_id" readonly>
 </div>
 
 <div>
 <label>Full Name</label>
-<input type="text" id="full_name">
+<input type="text" id="full_name" readonly>
 </div>
 
 <div>
 <label>Department</label>
-<input type="text" id="department_input">
+<input type="text" id="department_input" readonly>
 </div>
 
 <div>
 <label>Phone Number</label>
-<input type="text" id="phone">
+<input type="text" id="phone" readonly>
 </div>
 
 <div>
 <label>Email Address</label>
-<input type="email" id="email">
+<input type="email" id="email" readonly>
 </div>
 
 <div>
 <label>Shift Name</label>
-<input type="text" id="shift_name">
+<input type="text" id="shift_name" readonly>
 </div>
 
 <div>
 <label>Blood Group</label>
-<input type="text" id="blood_group">
+<input type="text" id="blood_group" readonly>
 </div>
 
 <div>
 <label>Emergency Contact</label>
-<input type="text" id="emergency_contact">
+<input type="text" id="emergency_contact" readonly>
 </div>
 
 <div class="address-field">
 <label>Address</label>
-<textarea id="address"></textarea>
+<textarea id="address" readonly></textarea>
 </div>
 
 <div>
 <label>Employee Status</label>
 
 <select id="employee_status">
-<option>Active</option>
-<option>Inactive</option>
+
+<option value="Active">Active</option>
+
+<option value="Inactive">Inactive</option>
+
 </select>
 
 </div>

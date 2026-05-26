@@ -1,7 +1,9 @@
 ﻿const employeeId = localStorage.getItem("employeeId");
 
 if (!employeeId) {
+
   window.location.href = "role.html";
+
 }
 
 async function loadProfile() {
@@ -14,23 +16,13 @@ async function loadProfile() {
 
     const data = await response.json();
 
-    /* LEFT CARD */
-
-    document.getElementById("name").innerText =
-      data.full_name || "Employee";
-
-    document.getElementById("department").innerText =
-      data.department || "Department";
-
-
-    /* NEW TOP CENTER CARD */
+    /* TOP CARD */
 
     document.getElementById("top_name").innerText =
       data.full_name || "Employee";
 
     document.getElementById("top_id").innerText =
       data.employee_id || "";
-
 
     /* FORM DETAILS */
 
@@ -67,6 +59,8 @@ async function loadProfile() {
   }
 
   catch (error) {
+
+    console.log(error);
 
     alert("Unable to load profile");
 
