@@ -99,16 +99,41 @@ exports.submitLeave = (req, res) => {
 };
 
 // HR VIEW EMPLOYEES
+// HR VIEW EMPLOYEES (ONLY EMPLOYEES, HIDE HR)
 exports.getEmployees = (req, res) => {
+
   db.query(
-    "SELECT employee_id, full_name, department, email, phone, employee_status FROM employees ORDER BY full_name",
+
+    `SELECT
+      e.employee_id,
+      e.full_name,
+      e.department,
+      e.email,
+      e.phone,
+      e.employee_status
+    FROM employees e
+    JOIN users u
+    ON e.employee_id = u.employee_id
+    WHERE u.role='employee'
+    ORDER BY e.full_name`,
+
     (err, result) => {
+
       if (err) {
-        return res.status(500).json({ success: false, message: "Server error" });
+
+        return res.status(500).json({
+          success:false,
+          message:"Server error"
+        });
+
       }
+
       res.json(result);
+
     }
+
   );
+
 };
 
 // HR VIEW LEAVES
