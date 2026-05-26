@@ -1,61 +1,76 @@
 ﻿const employeeId = localStorage.getItem("employeeId");
 
-if(!employeeId){
-window.location.href="role.html";
+if (!employeeId) {
+  window.location.href = "role.html";
 }
 
-async function loadProfile(){
+async function loadProfile() {
 
-try{
+  try {
 
-const response=await fetch(
-`http://localhost:5000/employee/${employeeId}`
-);
+    const response = await fetch(
+      `http://localhost:5000/employee/${employeeId}`
+    );
 
-const data=await response.json();
+    const data = await response.json();
 
-document.getElementById("name").innerText=
-data.full_name || "Employee";
+    /* LEFT CARD */
 
-document.getElementById("department").innerText=
-data.department || "Department";
+    document.getElementById("name").innerText =
+      data.full_name || "Employee";
 
-document.getElementById("employee_id").value=
-data.employee_id || "";
+    document.getElementById("department").innerText =
+      data.department || "Department";
 
-document.getElementById("full_name").value=
-data.full_name || "";
 
-document.getElementById("department_input").value=
-data.department || "";
+    /* NEW TOP CENTER CARD */
 
-document.getElementById("phone").value=
-data.phone || "";
+    document.getElementById("top_name").innerText =
+      data.full_name || "Employee";
 
-document.getElementById("email").value=
-data.email || "";
+    document.getElementById("top_id").innerText =
+      data.employee_id || "";
 
-document.getElementById("shift_name").value=
-data.shift_name || "";
 
-document.getElementById("blood_group").value=
-data.blood_group || "";
+    /* FORM DETAILS */
 
-document.getElementById("address").value=
-data.address || "";
+    document.getElementById("employee_id").value =
+      data.employee_id || "";
 
-document.getElementById("emergency_contact").value=
-data.emergency_contact || "";
+    document.getElementById("full_name").value =
+      data.full_name || "";
 
-document.getElementById("employee_status").value=
-data.employee_status || "Active";
+    document.getElementById("department_input").value =
+      data.department || "";
 
-}
-catch(error){
+    document.getElementById("phone").value =
+      data.phone || "";
 
-alert("Unable to load profile");
+    document.getElementById("email").value =
+      data.email || "";
 
-}
+    document.getElementById("shift_name").value =
+      data.shift_name || "";
+
+    document.getElementById("blood_group").value =
+      data.blood_group || "";
+
+    document.getElementById("address").value =
+      data.address || "";
+
+    document.getElementById("emergency_contact").value =
+      data.emergency_contact || "";
+
+    document.getElementById("employee_status").value =
+      data.employee_status || "Active";
+
+  }
+
+  catch (error) {
+
+    alert("Unable to load profile");
+
+  }
 
 }
 
