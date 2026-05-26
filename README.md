@@ -1,1 +1,0 @@
-# steelplant-internship-project
