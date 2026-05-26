@@ -82,6 +82,7 @@ font-weight:500;
   color: #6b7280;
 }
 
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -106,7 +107,84 @@ textarea {
   resize: none;
   grid-column: span 2;
 }
+.profile-top-card {
+  width: 100%;
+  background: linear-gradient(135deg, #fff7df, #fff1c7);
+  border: 2px solid #ffb800;
+  border-radius: 24px;
+  padding: 24px 30px;
+  margin-bottom: 28px;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profile-top-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.top-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffcc33, #ff9900);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 38px;
+  color: white;
+}
+
+.top-user-details h2,
+.profile-top-right h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.top-user-details p,
+.profile-top-right p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.top-divider {
+  width: 2px;
+  height: 80px;
+  background: rgba(255, 184, 0, 0.4);
+}
+
+.profile-top-right {
+  text-align: center;
+  min-width: 180px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 940px) {
+
+  .profile-top-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-top-left {
+    flex-direction: column;
+  }
+
+  .top-divider {
+    width: 100%;
+    height: 2px;
+  }
+
+}
 
 @media (max-width: 940px) {
   .profile-card {
