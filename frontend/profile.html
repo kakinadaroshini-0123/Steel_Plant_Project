@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Employee Profile</title>
+
+<link rel="stylesheet"
+href="profile.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="bg1"></div>
+<div class="bg2"></div>
+
+<div class="profile-card">
+
+<div class="left-side">
+
+<div class="profile-image">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<h2 id="name">
+Loading...
+</h2>
+
+<p id="department">
+Department
+</p>
+
+<button onclick="enableEdit()">
+
+Edit Profile
+
+</button>
+
+</div>
+
+<div class="right-side">
+
+<div class="top-text">
+
+<h1>Employee Profile</h1>
+
+<p>Steel Plant Employee Details</p>
+
+</div>
+
+
+<div class="form-grid">
+
+<div>
+<label>Employee ID</label>
+<input type="text" id="employee_id" disabled>
+</div>
+
+<div>
+<label>Full Name</label>
+<input type="text" id="full_name">
+</div>
+
+<div>
+<label>Department</label>
+<input type="text" id="department_input">
+</div>
+
+<div>
+<label>Phone Number</label>
+<input type="text" id="phone">
+</div>
+
+<div>
+<label>Email Address</label>
+<input type="email" id="email">
+</div>
+
+<div>
+<label>Shift Name</label>
+<input type="text" id="shift_name">
+</div>
+
+<div>
+<label>Blood Group</label>
+<input type="text" id="blood_group">
+</div>
+
+<div>
+<label>Emergency Contact</label>
+<input type="text" id="emergency_contact">
+</div>
+
+<div class="address-field">
+<label>Address</label>
+<textarea id="address"></textarea>
+</div>
+
+<div>
+<label>Employee Status</label>
+
+<select id="employee_status">
+<option>Active</option>
+<option>Inactive</option>
+</select>
+
+</div>
+
+</div>
+
+<button class="save-btn"
+onclick="updateProfile()">
+
+Save Changes
+
+</button>
+
+</div>
+
+</div>
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>

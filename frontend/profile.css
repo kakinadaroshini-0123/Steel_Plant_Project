@@ -1,0 +1,170 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(255, 184, 0, 0.16), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 94, 0, 0.18), transparent 26%),
+    #0e1116;
+  color: white;
+}
+
+.profile-card {
+  width: min(1120px, 92vw);
+  margin: 36px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 32px;
+  padding: 30px;
+  border-radius: 32px;
+  background: rgba(15, 15, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.left-side {
+  padding: 34px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffb800, #ff5e00);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  font-size: 72px;
+}
+
+.left-side h2 {
+  font-size: 32px;
+}
+
+.left-side p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.left-side button {
+  border: none;
+  padding: 14px 30px;
+  border-radius: 18px;
+  background: white;
+  color: #ff5e00;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.right-side {
+  padding: 38px;
+  background: white;
+  border-radius: 32px;
+}
+
+.top-text h1 {
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.top-text p {
+  margin-bottom: 28px;
+  color: #6b7280;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  color: #111827;
+  background: #f8fafc;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+  grid-column: span 2;
+}
+
+.save-btn {
+  margin-top: 26px;
+  width: 100%;
+  padding: 18px 0;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffb800, #ff5e00);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 940px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* LABELS */
+
+.form-grid div{
+
+display:flex;
+flex-direction:column;
+
+}
+
+.form-grid label{
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:8px;
+
+color:#374151;
+
+}
+
+.address-field{
+
+grid-column:span 2;
+
+}
+
+
+/* INPUT FOCUS EFFECT */
+
+.form-grid input:focus,
+.form-grid textarea:focus,
+.form-grid select:focus{
+
+border:1px solid #ff9900;
+
+background:white;
+
+box-shadow:0 0 12px rgba(255,153,0,0.2);
+
+}

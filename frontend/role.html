@@ -1,0 +1,191 @@
+<!-- role.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Steel Plant Portal</title>
+
+    <link rel="stylesheet"
+          href="role.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="gradient1"></div>
+    <div class="gradient2"></div>
+
+    <!-- CONTAINER -->
+
+    <div class="container">
+
+        <!-- LEFT PANEL -->
+
+        <div class="left-panel">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+
+                    <i class="fa-solid fa-industry"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Steel Plant</h2>
+
+                    <p>Employee Management System</p>
+
+                </div>
+
+            </div>
+
+            <h1>
+                Smart Steel Plant
+                Management Portal
+            </h1>
+
+            <p class="description">
+
+                Manage employees, attendance,
+                departments and HR activities
+                through one smart platform.
+
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Attendance Management</span>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>HR Monitoring</span>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Employee Dashboard</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+
+        <div class="right-panel">
+
+            <div class="top-text">
+
+                <h2>Select Your Role</h2>
+
+                <p>
+                    Login to continue
+                </p>
+
+                <p id="backendStatus" class="backend-status">
+                    Checking backend connection...
+                </p>
+
+            </div>
+
+            <!-- ROLE GRID -->
+
+            <div class="role-grid">
+
+                <!-- HR -->
+
+                <div class="role-card hr"
+                     onclick="selectRole('hr')">
+
+                    <div class="glow"></div>
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-user-tie"></i>
+
+                    </div>
+
+                    <h3>HR</h3>
+
+                    <p>
+                        Manage employees,
+                        attendance and reports
+                    </p>
+
+                    <button>
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+                <!-- EMPLOYEE -->
+
+                <div class="role-card employee"
+                     onclick="selectRole('employee')">
+
+                    <div class="glow"></div>
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <h3>EMPLOYEE</h3>
+
+                    <p>
+                        View attendance,
+                        profile and updates
+                    </p>
+
+                    <button>
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="role.js"></script>
+
+</body>
+
+</html>

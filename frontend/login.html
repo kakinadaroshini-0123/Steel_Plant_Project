@@ -1,0 +1,185 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link rel="stylesheet"
+          href="login.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+
+    <!-- LOGIN CARD -->
+
+    <div class="login-card">
+
+        <!-- LEFT -->
+
+        <div class="left-side">
+
+            <div class="logo-box">
+
+                <i class="fa-solid fa-industry"></i>
+
+            </div>
+
+            <h1>
+                Steel Plant
+                Portal
+            </h1>
+
+            <p>
+
+                Smart Employee
+                Management System
+
+            </p>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="right-side">
+
+            <div class="top-text">
+
+                <h2 id="roleTitle">
+
+                    Login
+
+                </h2>
+
+                <p>
+                    Login to continue
+                </p>
+
+            </div>
+
+            <!-- FORM -->
+
+            <form id="loginForm">
+
+                <!-- USER ID -->
+
+                <div class="input-box">
+
+                    <label>
+
+                        Employee ID
+
+                    </label>
+
+                    <div class="input-field">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <input
+                            type="text"
+                            id="userid"
+                            placeholder="Enter ID"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-box">
+
+                    <label>
+
+                        Password
+
+                    </label>
+
+                    <div class="input-field">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter Password"
+                            required>
+
+                        <span id="togglePassword">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button type="submit">
+
+                    Login
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP -->
+
+    <div id="popup" class="popup">
+
+        <div class="popup-box">
+
+            <i id="popupIcon"
+               class="fa-solid fa-circle-check"></i>
+
+            <h3 id="popupTitle">
+
+                Success
+
+            </h3>
+
+            <p id="popupMessage">
+
+                Login Successful
+
+            </p>
+
+            <button onclick="closePopup()">
+
+                OK
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
