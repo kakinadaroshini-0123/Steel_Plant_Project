@@ -83,7 +83,7 @@ VALUES
 
 ('100103','Rahul Reddy','Maintenance','9876543212','rahul@gmail.com','Night','A+','Kurmannapalem','9123456782','2023-08-15','Active','profile.png','34543'),
 
-('100104','Sneha Rao','Quality Control','9876543213','sneha@gmail.com','Morning','AB+','Gajuwaka','9123456783','2023-09-10','Active','profile.png','12345');
+('100104','Sneha Rao','Quality Control','9876543213','sneha@gmail.com','Morning','AB+','Gajuwaka','9123456783','2023-09-10','Active','profile.png','12345'),
 
 ('200100','Anita Sharma','Human Resources','9876543220','anita.hr@gmail.com','Morning','B+','Steel Plant HR Department','9123456790','2023-01-15','Active','profile.png','54321');
 
