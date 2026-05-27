@@ -2,138 +2,102 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Employee Profile</title>
 
-<link rel="stylesheet"
-href="profile.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<div class="bg1"></div>
-<div class="bg2"></div>
-
 <div class="profile-card">
 
-<div class="right-side">
+  <div class="right-side">
 
-<div class="top-text">
+    <!-- TOP CARD -->
+    <div class="profile-top-card">
 
+      <div class="profile-top-left">
 
-</div>
+        <div class="top-icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
 
-<!-- TOP PROFILE CARD -->
+        <div class="top-user-details">
+          <h2 id="top_name">Priya Sharma</h2>
+          <p>Employee Profile</p>
+        </div>
 
-<div class="profile-top-card">
+      </div>
 
-<div class="profile-top-left">
+      <div class="profile-top-right">
 
-<div class="top-icon">
-<i class="fa-solid fa-user"></i>
-</div>
+        <h2 id="top_id">100102</h2>
+        <p>Employee ID</p>
 
-<div class="top-user-details">
+        <span class="status-badge active">Active</span>
 
-<h2 id="top_name">Priya Sharma</h2>
+      </div>
 
-<p>Full Name</p>
+    </div>
 
-</div>
+    <!-- FORM -->
+    <div class="form-grid">
 
-</div>
+      <div>
+        <label>Employee ID</label>
+        <input type="text" id="employee_id" readonly>
+      </div>
 
-<div class="top-divider"></div>
+      <div>
+        <label>Full Name</label>
+        <input type="text" id="full_name" readonly>
+      </div>
 
-<div class="profile-top-right">
+      <div>
+        <label>Department</label>
+        <input type="text" id="department_input" readonly>
+      </div>
 
-<h2 id="top_id">100102</h2>
+      <div>
+        <label>Phone</label>
+        <input type="text" id="phone" readonly>
+      </div>
 
-<p>Employee ID</p>
+      <div>
+        <label>Email</label>
+        <input type="email" id="email" readonly>
+      </div>
 
-</div>
+      <div>
+        <label>Shift</label>
+        <input type="text" id="shift_name" readonly>
+      </div>
 
-</div>
+      <div>
+        <label>Blood Group</label>
+        <input type="text" id="blood_group" readonly>
+      </div>
 
-<!-- FORM -->
+      <div>
+        <label>Emergency Contact</label>
+        <input type="text" id="emergency_contact" readonly>
+      </div>
 
-<div class="form-grid">
+      <div class="address-field">
+        <label>Address</label>
+        <textarea id="address" readonly></textarea>
+      </div>
 
-<div>
-<label>Employee ID</label>
-<input type="text" id="employee_id" readonly>
-</div>
+    </div>
 
-<div>
-<label>Full Name</label>
-<input type="text" id="full_name" readonly>
-</div>
-
-<div>
-<label>Department</label>
-<input type="text" id="department_input" readonly>
-</div>
-
-<div>
-<label>Phone Number</label>
-<input type="text" id="phone" readonly>
-</div>
-
-<div>
-<label>Email Address</label>
-<input type="email" id="email" readonly>
-</div>
-
-<div>
-<label>Shift Name</label>
-<input type="text" id="shift_name" readonly>
-</div>
-
-<div>
-<label>Blood Group</label>
-<input type="text" id="blood_group" readonly>
-</div>
-
-<div>
-<label>Emergency Contact</label>
-<input type="text" id="emergency_contact" readonly>
-</div>
-
-<div class="address-field">
-<label>Address</label>
-<textarea id="address" readonly></textarea>
-</div>
-
-<div>
-<label>Employee Status</label>
-
-<select id="employee_status">
-
-<option value="Active">Active</option>
-
-<option value="Inactive">Inactive</option>
-
-</select>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </div>
 
 <script src="profile.js"></script>
 
 </body>
-
 </html>
