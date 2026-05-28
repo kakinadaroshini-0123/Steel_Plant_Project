@@ -8,7 +8,7 @@ async function loadAttendance() {
     const response = await fetch(`http://localhost:5000/attendance/${employeeId}`);
     const data = await response.json();
 
-    const tbody = document.getElementById("attendanceTable");
+    const tbody = document.getElementById("employee");
     if (!data.length) {
       tbody.innerHTML = `<tr><td colspan="2">No attendance records available</td></tr>`;
       return;

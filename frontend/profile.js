@@ -8,7 +8,9 @@ if (!employeeId) {
 }
 
 async function loadProfile() {
+
   try {
+
     const response = await fetch(`http://localhost:5000/employee/${employeeId}`);
 
     if (!response.ok) {
@@ -21,7 +23,7 @@ async function loadProfile() {
 
     // TOP
     document.getElementById("top_name").innerText =
-      data.full_name || "Employee";
+      data.employee_name || "Employee";
 
     document.getElementById("top_id").innerText =
       data.employee_id || "";
@@ -31,7 +33,7 @@ async function loadProfile() {
       data.employee_id || "";
 
     document.getElementById("full_name").value =
-      data.full_name || "";
+      data.employee_name || "";
 
     document.getElementById("department_input").value =
       data.department || "";
@@ -54,14 +56,18 @@ async function loadProfile() {
     document.getElementById("address").value =
       data.address || "";
 
-    // STATUS (NEW FIX)
+    // STATUS
     document.querySelector(".status-badge").innerText =
       data.employee_status || "Active";
 
   } catch (error) {
+
     console.error(error);
+
     alert("Unable to load employee details. Check backend/API.");
+
   }
+
 }
 
 loadProfile();

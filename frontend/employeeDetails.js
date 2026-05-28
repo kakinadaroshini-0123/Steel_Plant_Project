@@ -10,18 +10,18 @@ async function loadEmployees() {
       return;
     }
 
-    employeeTable.innerHTML = data
-      .map((employee) => `
-      <tr>
-        <td>${employee.employee_id}</td>
-        <td>${employee.full_name}</td>
-        <td>${employee.department}</td>
-        <td>${employee.email}</td>
-        <td>${employee.phone}</td>
-        <td>${employee.employee_status}</td>
-      </tr>
-    `)
-      .join("");
+employeeTable.innerHTML = data
+  .map((employee) => `
+  <tr>
+    <td>${employee.employee_id}</td>
+    <td>${employee.employee_name}</td>
+    <td>${employee.department}</td>
+    <td>${employee.email}</td>
+    <td>${employee.phone}</td>
+    <td>${employee.employee_status}</td>
+  </tr>
+`)
+.join("");
   } catch (error) {
     employeeTable.innerHTML = `<tr><td colspan="6">Unable to load employees.</td></tr>`;
   }
