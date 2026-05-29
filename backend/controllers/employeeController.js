@@ -325,3 +325,38 @@ exports.rejectLeave = (req, res) => {
   );
 
 };
+// EMPLOYEE LEAVE STATUS
+
+exports.getEmployeeLeaves = (req, res) => {
+
+  const id = req.params.id;
+
+  db.query(
+
+    `SELECT *
+     FROM leave_requests
+     WHERE employee_id = ?
+     ORDER BY id DESC`,
+
+    [id],
+
+    (err, result) => {
+
+      if (err) {
+
+        console.log(err);
+
+        return res.status(500).json({
+          success: false,
+          message: "Server error"
+        });
+
+      }
+
+      res.json(result);
+
+    }
+
+  );
+
+};

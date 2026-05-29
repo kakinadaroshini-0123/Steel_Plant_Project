@@ -14,8 +14,7 @@ async function loadAttendance() {
 
     const data = await response.json();
 
-    const tbody =
-      document.getElementById("attendanceTable");
+    const tbody = document.getElementById("attendanceTable");
 
     if (!data.length) {
 
@@ -30,29 +29,37 @@ async function loadAttendance() {
       return;
     }
 
-    tbody.innerHTML = data.map((item) => `
+    tbody.innerHTML = data.map((item) => {
 
-      <tr>
-        <td>${item.attendance_date}</td>
-        <td>${item.status}</td>
-      </tr>
+      const formattedDate =
+        new Date(item.attendance_date)
+        .toLocaleDateString("en-GB");
 
-    `).join("");
+      return `
+        <tr>
+          <td>${formattedDate}</td>
+          <td>${item.status}</td>
+        </tr>
+      `;
+
+    }).join("");
 
   }
 
   catch (error) {
 
     document.getElementById("attendanceTable").innerHTML = `
-
       <tr>
         <td colspan="2">
           Unable to load attendance
         </td>
       </tr>
-
     `;
+
+    console.log(error);
+
   }
+
 }
 
 loadAttendance();
