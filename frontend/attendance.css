@@ -1,41 +1,162 @@
-﻿body {
-  margin: 0;
-  padding: 30px;
-  font-family: 'Poppins', sans-serif;
-  background: #0e1116;
-  color: white;
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+
+  margin:0;
+  padding:0;
+
+  box-sizing:border-box;
+
+  font-family:'Poppins',sans-serif;
+}
+
+body {
+
+  padding:30px;
+
+  min-height:100vh;
+
+  background:#0e1116;
+
+  color:white;
 }
 
 h1 {
-  margin-bottom: 24px;
+
+  margin-bottom:24px;
+
+  font-size:42px;
+
+  font-weight:700;
+}
+
+.table-container{
+
+  width:100%;
+
+  overflow-x:auto;
+
+  border-radius:28px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,0.35);
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 24px;
-  overflow: hidden;
-}
 
-th,
-td {
-  padding: 18px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: left;
+  width:100%;
+
+  border-collapse:collapse;
+
+  min-width:700px;
 }
 
 th {
-  background: rgba(255, 152, 0, 0.2);
-  color: white;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,184,0,0.25),
+    rgba(255,94,0,0.18)
+  );
+
+  color:white;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  padding:20px 18px;
+
+  text-align:left;
 }
 
-tbody tr:hover {
-  background: rgba(255, 255, 255, 0.06);
+td {
+
+  padding:18px;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.06);
+
+  font-size:15px;
+
+  color:#f3f4f6;
 }
 
-@media (max-width: 760px) {
-  body { padding: 20px; }
+tbody tr{
+
+  transition:0.3s;
+}
+
+tbody tr:hover{
+
+  background:
+  rgba(255,255,255,0.05);
+}
+
+/* STATUS COLORS */
+
+.present{
+
+  color:#22c55e;
+
+  font-weight:700;
+}
+
+.absent{
+
+  color:#ef4444;
+
+  font-weight:700;
+}
+
+.holiday{
+
+  color:#facc15;
+
+  font-weight:700;
+}
+
+/* SCROLLBAR */
+
+.table-container::-webkit-scrollbar{
+
+  height:8px;
+}
+
+.table-container::-webkit-scrollbar-track{
+
+  background:#111827;
+}
+
+.table-container::-webkit-scrollbar-thumb{
+
+  background:#ff9800;
+
+  border-radius:20px;
+}
+
+@media(max-width:760px){
+
+  body{
+
+    padding:18px;
+  }
+
+  h1{
+
+    font-size:32px;
+  }
+
   th,
-  td { padding: 14px 12px; }
+  td{
+
+    padding:14px;
+  }
 }
